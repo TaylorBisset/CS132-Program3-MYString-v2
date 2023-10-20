@@ -37,6 +37,12 @@ int main()
     for (TBString word; fin >> word; ++wordCnt)
     {
         jumboString = jumboString + word;
+
+        if (wordCnt % 5 == 0)
+        {
+            combinedStrings.push_back(jumboString);
+            jumboString = TBString();
+        }
     }
     words.resize(wordCnt);            //shrink vector to size used
 
