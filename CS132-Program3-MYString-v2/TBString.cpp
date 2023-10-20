@@ -72,8 +72,10 @@ istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBStr
 	char inputWord[100];
 	if (inputStrm >> inputWord)
 	{
-		int newEnd;
-		for (newEnd = 0; inputWord[newEnd] != '\0'; newEnd++)
+		if (tbStr.str == inputWord)
+		{
+			return inputStrm;
+		}
 	}
 }
 
