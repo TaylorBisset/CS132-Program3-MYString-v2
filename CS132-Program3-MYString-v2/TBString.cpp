@@ -67,6 +67,12 @@ char TBString::at(int index)
 	}
 }
 
+istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBString::read(istream& inputStrm)`
+{
+
+}
+
+/*
 bool TBString::read(istream& inputStrm)
 {
 	char inputWord[100];
@@ -87,6 +93,7 @@ bool TBString::read(istream& inputStrm)
 		return false;
 	}
 }
+*/
 
 void TBString::write(ostream& outputStrm)
 {
