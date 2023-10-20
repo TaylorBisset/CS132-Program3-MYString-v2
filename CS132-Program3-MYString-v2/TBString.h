@@ -18,6 +18,7 @@ public:
     int length();
     int capacity();
 
+    char& operator[](int index);
     char at(int index);
     bool read(istream& inputStrm);
     void write(ostream& outputStrm);

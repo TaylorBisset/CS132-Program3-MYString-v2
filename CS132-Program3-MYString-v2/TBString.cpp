@@ -50,6 +50,11 @@ int TBString::capacity()
 	return cap;
 }
 
+char& TBString::operator[](int index) 
+{
+	return str[index];
+}
+
 char TBString::at(int index)
 {
 	if (index >= 0 && index < end)
