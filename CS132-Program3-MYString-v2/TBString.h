@@ -23,22 +23,22 @@ public:
     friend istream& operator>>(istream& inputStrm, TBString& tbStr);        // replaces `bool read(istream& inputStrm);`
     friend ostream& operator<<(ostream& outputStrm, const TBString& tbStr); // replaces `void write(ostream& outputStrm);`
 
-    bool lessThan(const TBString& argStr);
+    bool operator<(const TBString& argStr) const;   // replaces `bool lessThan(const TBString& argStr);`
     bool greaterThan(const TBString& argStr);
     bool equals(const TBString& argStr);
 
-    TBString& operator=(const TBString& argStr);  // replaces `void setEqualTo(const TBString& argStr);`
+    TBString& operator=(const TBString& argStr);    // replaces `void setEqualTo(const TBString& argStr);`
     const char* c_str();
 
 private:
-    int length(const char* str)
+    int length(const char* str) const 
     {
         int len;
         for (len = 0; str[len] != '\0'; len++) {}
         return len;
     }
 
-    int compareTo(const char* lstr, const char* rstr)
+    int compareTo(const char* lstr, const char* rstr) const 
     {
         while (*lstr != '\0' && *rstr != '\0')
         {

@@ -122,10 +122,16 @@ void TBString::write(ostream& outputStrm)
 }
 */
 
+bool TBString::operator<(const TBString& argStr) const	// replaces `bool TBString::lessThan(const TBString& argStr)`
+{
+	return compareTo(this->str, argStr.str) < 0;
+}
+
+/*
 bool TBString::lessThan(const TBString& argStr)
 {
 	int result = compareTo(this->str, argStr.str);
-	if (result == -1)
+	if (result == -1)t
 	{
 		return true;
 	}
@@ -134,6 +140,7 @@ bool TBString::lessThan(const TBString& argStr)
 		return false;
 	}
 }
+*/
 
 bool TBString::greaterThan(const TBString& argStr)
 {
