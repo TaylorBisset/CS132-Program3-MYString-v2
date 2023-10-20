@@ -134,19 +134,11 @@ TBString& TBString::operator=(const TBString& argStr)	// replaces `void TBString
 		return *this;
 	}
 
-	end = argStr.end;
+	this->str = new char[strlen(argStr.str) + 1];
+	strcpy_s(this->str,  strlen(argStr.str) + 1, argStr.str);
 
-	if (end >= cap)
-	{
-		int newCap = cap * 2;
-	}
+	this->end = argStr.end;
 
-
-
-	for (int i = 0; i <= end; ++i)
-	{
-		str[i] = argStr.str[i];
-	}
 	return *this;
 }
 
