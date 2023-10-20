@@ -92,8 +92,11 @@ ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `voi
 	return outputStrm;
 }
 
-TBString operator+(const TBString& left, const TBString& right) 
+TBString operator+(const TBString& lvalue, const TBString& rvalue) 
 {
+	int newLength = lvalue.end + rvalue.end;
+	char* result = new char[newLength + 1];
+	return TBString(result);
 	
 }
 
