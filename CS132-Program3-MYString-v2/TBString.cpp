@@ -111,7 +111,8 @@ bool TBString::read(istream& inputStrm)
 
 ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `void TBString::write(ostream& outputStrm)`
 {
-
+	outputStrm << tbStr.str;
+	return outputStrm;
 }
 
 /*
