@@ -129,8 +129,20 @@ bool TBString::equals(const TBString& argStr)
 
 TBString& TBString::operator=(const TBString& argStr)	// replaces `void TBString::setEqualTo(const TBString& argStr)`
 {
+	if (this == &argStr)
+	{
+		return *this;
+	}
+
 	end = argStr.end;
-	// cap = ??;						//TODO: needs to potentially grow for prog3
+
+	if (end >= cap)
+	{
+		int newCap = cap * 2;
+	}
+
+
+
 	for (int i = 0; i <= end; ++i)
 	{
 		str[i] = argStr.str[i];
