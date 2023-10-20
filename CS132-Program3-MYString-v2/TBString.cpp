@@ -162,6 +162,12 @@ bool TBString::greaterThan(const TBString& argStr)
 }
 */
 
+bool TBString::operator==(const TBString& argStr) const	// replaces `bool TBString::equals(const TBString& argStr)`
+{
+	return compareTo(this->str, argStr.str) > 0;
+}
+
+/*
 bool TBString::equals(const TBString& argStr)
 {
 	int result = compareTo(this->str, argStr.str);
@@ -173,7 +179,9 @@ bool TBString::equals(const TBString& argStr)
 	{
 		return false;
 	}
+
 }
+*/
 
 TBString& TBString::operator=(const TBString& argStr)	// replaces `void TBString::setEqualTo(const TBString& argStr)`
 {
