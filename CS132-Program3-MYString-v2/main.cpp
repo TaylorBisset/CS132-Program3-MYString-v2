@@ -31,7 +31,7 @@ int main()
     }
 
     int wordCnt = 0;
-    for (; words[wordCnt].read(fin); ++wordCnt)
+    for (; fin >> words[wordCnt]; ++wordCnt)
     {       // empty loop
             // cout << words[wordCnt].c_str() << '\t';      // for verifying input
     }
