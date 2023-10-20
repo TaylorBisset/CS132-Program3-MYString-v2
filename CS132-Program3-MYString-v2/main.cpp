@@ -106,18 +106,19 @@ int main()
 Output to console:
 
 I            I            I            Martian      Or           Such
-They         Were         a            a            a            a
-amazingly    an           an           and          animal.      as
-ask          ask          be.          began        began        body?
-brain        busy.        compare      could        did          directing,
-each,        engine       felt         first        for          his
-how          human        impossible.  in           in           intelligent
-intelligent  ironclad     life         lower        machines,    man's
-mechanisms?  much         my           myself       myself       or
-rules        ruling,      seem         seemed       sit          sits
-steam        the          the          they         they         thing
-things       time         to           to           to           to
-to           using,       was          what         within       would
+They         ThisIsMyAmazinglyLongStringToMakeYourExtractionOperatorWorkCorrectly.Were         a            a            a
+a            amazingly    an           an           and          animal.
+as           ask          ask          be.          began        began
+body?        brain        busy.        compare      could        did
+directing,   each,        engine       felt         first        for
+his          how          human        impossible.  in           in
+intelligent  intelligent  ironclad     life         lower        machines,
+man's        mechanisms?  much         my           myself       myself
+or           rules        ruling,      seem         seemed       sit
+sits         steam        the          the          they         they
+thing        things       time         to           to           to
+to           to           using,       was          what         within
+would
 
 Press any key to continue . . .
 
