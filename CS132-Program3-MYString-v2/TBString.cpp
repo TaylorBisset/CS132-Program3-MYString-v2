@@ -109,10 +109,17 @@ bool TBString::read(istream& inputStrm)
 }
 */
 
+ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `void TBString::write(ostream& outputStrm)`
+{
+
+}
+
+/*
 void TBString::write(ostream& outputStrm)
 {
 	outputStrm << str;
 }
+*/
 
 bool TBString::lessThan(const TBString& argStr)
 {
