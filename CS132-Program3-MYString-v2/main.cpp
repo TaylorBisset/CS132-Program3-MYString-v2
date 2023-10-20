@@ -47,7 +47,7 @@ int main()
         notDone = false;
         for (int i = 0; i < wordCnt - 1; i++)
         {
-            if (words[i].greaterThan(words[i + 1]))
+            if (words[i] > (words[i + 1]))
             {
                 TBString tempStr = words[i];
                 words[i] = words[i + 1];
