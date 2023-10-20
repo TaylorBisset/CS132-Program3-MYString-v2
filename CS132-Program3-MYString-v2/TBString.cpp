@@ -96,8 +96,18 @@ TBString operator+(const TBString& lvalue, const TBString& rvalue)
 {
 	int newLength = lvalue.end + rvalue.end;
 	char* result = new char[newLength + 1];
+
+	for (int i = 0; i < lvalue.end; i++)
+	{
+		result[i] = lvalue.str[i];
+	}
+	for (int i = 0; i < rvalue.end; i++)
+	{
+		result[lvalue.end + i] = rvalue.str[i];
+	}
+	result[newLength] = '\0';
+
 	return TBString(result);
-	
 }
 
 bool TBString::operator<(const TBString& argStr) const			// replaces `bool TBString::lessThan(const TBString& argStr)`
