@@ -11,7 +11,9 @@ class TBString
                     //   for example Nancy Programmer would use the name NPString 
 public:
     TBString();						// default constructor
-    TBString(const char* cstr);		// cstring constructor
+    TBString(const TBString& mstr); // copy constructor
+    TBString(const char* cstr);     // cstring constructor
+    ~TBString();                    // destructor
 
     int length();
     int capacity();
