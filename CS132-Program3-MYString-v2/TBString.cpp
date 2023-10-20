@@ -9,6 +9,16 @@ TBString::TBString()
 	str[end] = '\0';
 }
 
+TBString::TBString(const TBString& other) 
+{
+	cap = other.cap;
+	end = other.end;
+	str = new char[cap];
+	for (int i = 0; i <= end; ++i) {
+		str[i] = other.str[i];
+	}
+}
+
 TBString::TBString(const char* cstr)
 {
 	for (end = 0; cstr[end] != '\0'; ++end);
