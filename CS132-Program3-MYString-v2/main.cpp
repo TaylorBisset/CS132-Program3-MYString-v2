@@ -30,6 +30,9 @@ int main()
         exit(1);
     }
 
+    vector<TBString> combinedStrings;
+    TBString jumboString;
+
     int wordCnt = 0;
     for (; fin >> words[wordCnt]; ++wordCnt)
     {       // empty loop
