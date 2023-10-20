@@ -139,6 +139,8 @@ TBString& TBString::operator=(const TBString& argStr)	// replaces `void TBString
 		return *this;
 	}
 
+	delete[] this->str;
+
 	this->str = new char[strlen(argStr.str) + 1];
 	strcpy_s(this->str,  strlen(argStr.str) + 1, argStr.str);
 
