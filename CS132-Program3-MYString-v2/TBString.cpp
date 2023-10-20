@@ -61,7 +61,9 @@ bool TBString::read(istream& inputStrm)
 		return true;
 	}
 	else
+	{
 		return false;
+	}
 }
 
 void TBString::write(ostream& outputStrm)

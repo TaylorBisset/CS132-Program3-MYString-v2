@@ -126,7 +126,7 @@ Press any key to continue . . .
 
 /*
 
-Assignemnt Details
+Assignment Details
 
 
 Program Note: For this assignment the normal C++ string and cstring functions can’t be used (except >> and << with cstrings).
@@ -141,113 +141,92 @@ I have highlighted the new/modified functions in red below.
 Your Gang of four and overloaded operator functions should have “normal behavior”.
 As you write each function, you should make a little test to verify that the function is working correctly.
 
+- - - - - - - - - - - - - - - - - - - -
+
 The MYString class will need to have the following member functions:
 
 Programming Note: Write and test one or two functions at a time.
 Remember to mark member functions that do not change member data with const, I will be looking for this in the grading
 
-Member Functions : return type
+- - - - - - - - - - - - - - - - - - - -
 
-Description
+Member Functions : return type
+    Description
 
 MYString( )
-
-Default Constructor: creates an empty string
+    Default Constructor: creates an empty string
 
 MYString(const MYString & mstr)
-
-Copy Constructor:  creates a string that is a duplicate of the argument
+    Copy Constructor:  creates a string that is a duplicate of the argument
 
 MYString (const char* cstr)
-
-creates a string that contains the information from the argument
-example: MYString greeting( "hello there wise one");
+    creates a string that contains the information from the argument
+    example: MYString greeting( "hello there wise one");
 
 ~MYString()
-
-Destructor:  release the dynamic memory
+    Destructor:  release the dynamic memory
 
 = operator : lvalue&
+        Replaces
+        setEqualTo(const MYString& argStr): void
+    Assignment Operator: this does the assignment operation objStr.setEqualTo( argStr )
+    would change objStr so that it would contain the same information as argStr
 
-Replaces
+Non-const [ ] operator : char
+        Like:
+        at( int index) : char
+    returns the character at a certain location.  No Error checking.  Fast but dangerous
 
-setEqualTo(const MYString& argStr): void
-
-Assignment Operator: this does the assignment operation objStr.setEqualTo( argStr )
-would change objStr so that it would contain the same information as argStr
-
-Non-const
-
-[ ] operator : char
-
-Like:
-
-at( int index) : char
-
- returns the character at a certain location.  No Error checking.  Fast but dangerous
-
->> operator:
-istream&
-
-Replaces
-
-read( istream& istrm) : istr
-
-read a string from the istream argument (could be from cin or an ifstream variable) {when reading in,
-you can assume that you will not read in a string longer than 99 characters}
-This function will now return the istream which is the normal behavior.
+>> operator: istream&
+        Replaces
+        read( istream& istrm) : istr
+    read a string from the istream argument (could be from cin or an ifstream variable) 
+    {when reading in, you can assume that you will not read in a string longer than 99 characters}
+    This function will now return the istream which is the normal behavior.
 
 << operator : ostream&
+        Replaces
+        write( ostream& ostrm) : ostr
+    write the string out to the ostream argument, but do not add any end of line (could be cout or an ofstream variable)
+    This function will now return the ostream which is the normal behavior.
 
-Replaces
-write( ostream& ostrm) : ostr
-
-write the string out to the ostream argument, but do not add any end of line (could be cout or an ofstream variable)
-This function will now return the ostream which is the normal behavior.
-
-< operator
-> operator
-
-== operator : all return a bool
-
-Replaces/uses
-
-compareTo
-
-or
-lessThan
-greaterThan
-equalTo
-
-The operator overloaded versions of functions will replace your previous versions.
+< operator > operator == operator : all return a bool
+        Replaces/uses
+        compareTo
+            or
+        lessThan
+        greaterThan
+        equalTo
+    The operator overloaded versions of functions will replace your previous versions.
 
 + operator : MYString
-
-this function creates and returns a new MYString variable that is the combination of both the rvalue and the lvalue.
-For example if you had the following values inside two of your strings and added them “bat” + “man”,
-then you would return a MYString that contains “batman”
+    this function creates and returns a new MYString variable that is the combination of both the rvalue and the lvalue.
+    For example if you had the following values inside two of your strings and added them “bat” + “man”,
+    then you would return a MYString that contains “batman”
 
 length( ) : int
-
-the length of the string ( "cat" would return 3)
+    the length of the string ( "cat" would return 3)
 
 capacity() : int
-
-The amount of spaces that is currently reserved for possible use before growing
+    The amount of spaces that is currently reserved for possible use before growing
 
 c_str( ) : const char *
+    return a pointer to a constant cstring version of the MYString object
 
-return a pointer to a constant cstring version of the MYString object
-
-
+- - - - - - - - - - - - - - - - - - - -
 
 Static things
-These are the static variables and functions that you will need to implement in your program.
-Static Variables	What information it holds	Static Funtion for access
-currentCount	this is the count of how many MYString instances are currently "alive"	int getCurrentCount( )
-createdCount	this is the count of how many MYString instance have been created in the program
-( don't decrease in destructor)	int getCreatedCount( )
 
+These are the static variables and functions that you will need to implement in your program.
+
+Static Variables	What information it holds	                                                        Static Function for access
+
+currentCount	    this is the count of how many MYString instances are currently "alive"	            int getCurrentCount( )
+
+createdCount	    this is the count of how many MYString instance have been created in the program
+                    ( don't decrease in destructor)	                                                    int getCreatedCount( )
+
+- - - - - - - - - - - - - - - - - - - -
 
 Main Program Requirements:
 
@@ -265,8 +244,12 @@ Then output them to the screen with one combination string per line.
 When outputting the strings also include the length and capacity of the string on the same line.
 Here is an example of one line of output:
 
+```
+
 Theyseemedamazinglybusy.I         25:40    // use setw to make it look good
               // don't worry about making the one crazy long word look nice
+
+```
 After outputting all the combo strings, then on a new line each output the count of the current objects,
 and the total count of the objects create throughout your program.  These static outputs are required.
 You should strive for accuracy, but are more for our curiousity sake.
@@ -274,7 +257,10 @@ You should strive for accuracy, but are more for our curiousity sake.
 You must create your own sort routine (can’t call a library, bubble sort is fine) and you can’t use the swap function
 (I want you to be using your assignment operator).
 
+- - - - - - - - - - - - - - - - - - - -
+
 Turn In:
+
 For turn in, you will have three files: your main program, the .h file and the .cpp file, followed by the output file.
 For all programs which include class definitions,
 I want you to place them in that order (main, interface/header (.h), and implementation (.cpp),  output file ).
