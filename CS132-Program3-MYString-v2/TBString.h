@@ -23,7 +23,8 @@ public:
     friend istream& operator>>(istream& inputStrm, TBString& tbStr);        // replaces `bool read(istream& inputStrm);`
     friend ostream& operator<<(ostream& outputStrm, const TBString& tbStr); // replaces `void write(ostream& outputStrm);`
 
-    TBString operator+(const TBString& left, const TBString& right);
+    friend TBString operator+(const TBString& left, const TBString& right);
+
     bool operator<(const TBString& argStr) const;       // replaces `bool lessThan(const TBString& argStr);`
     bool operator>(const TBString& argStr) const;       // replaces `bool greaterThan(const TBString& argStr);`
     bool operator==(const TBString& argStr) const;      // replaces `bool equals(const TBString& argStr);`

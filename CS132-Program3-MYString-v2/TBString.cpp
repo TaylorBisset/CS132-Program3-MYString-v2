@@ -92,6 +92,11 @@ ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `voi
 	return outputStrm;
 }
 
+TBString operator+(const TBString& left, const TBString& right) 
+{
+	
+}
+
 bool TBString::operator<(const TBString& argStr) const			// replaces `bool TBString::lessThan(const TBString& argStr)`
 {
 	return compareTo(this->str, argStr.str) < 0;
