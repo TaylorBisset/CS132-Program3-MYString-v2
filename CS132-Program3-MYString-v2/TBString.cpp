@@ -69,7 +69,12 @@ char TBString::at(int index)
 
 istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBString::read(istream& inputStrm)`
 {
-
+	char inputWord[100];
+	if (inputStrm >> inputWord)
+	{
+		int newEnd;
+		for (newEnd = 0; inputWord[newEnd] != '\0'; newEnd++)
+	}
 }
 
 /*
