@@ -34,9 +34,9 @@ int main()
     TBString jumboString;
 
     int wordCnt = 0;
-    for (; fin >> words[wordCnt]; ++wordCnt)
-    {       // empty loop
-            // cout << words[wordCnt].c_str() << '\t';      // for verifying input
+    for (TBString word; fin >> word; ++wordCnt)
+    {
+        jumboString = jumboString + word;
     }
     words.resize(wordCnt);            //shrink vector to size used
 
