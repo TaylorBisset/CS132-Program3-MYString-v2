@@ -76,6 +76,8 @@ istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBStr
 		{
 			return inputStrm;
 		}
+		delete tbStr.str;
+		tbStr.str = new char[strlen(inputWord) + 1];
 	}
 }
 
