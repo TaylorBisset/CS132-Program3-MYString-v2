@@ -20,8 +20,8 @@ public:
 
     char& operator[](int index);
     char at(int index);
-    friend istream& operator>>(istream& inputStrm, TBString& tbStr);    // replaces `bool read(istream& inputStrm);`
-    void write(ostream& outputStrm);
+    friend istream& operator>>(istream& inputStrm, TBString& tbStr);        // replaces `bool read(istream& inputStrm);`
+    friend ostream& operator<<(ostream& outputStrm, const TBString& tbStr); // replaces `void write(ostream& outputStrm);`
 
     bool lessThan(const TBString& argStr);
     bool greaterThan(const TBString& argStr);
