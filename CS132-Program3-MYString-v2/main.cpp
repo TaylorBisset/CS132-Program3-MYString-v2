@@ -54,13 +54,13 @@ int main()
     while (notDone == true)
     {
         notDone = false;
-        for (int i = 0; i < wordCnt - 1; i++)
+        for (int i = 0; i < combinedStrings.size() - 1; i++)
         {
-            if (words[i] > (words[i + 1]))
+            if (combinedStrings[i] > (combinedStrings[i + 1]))
             {
-                TBString tempStr = words[i];
-                words[i] = words[i + 1];
-                words[i + 1] = tempStr;
+                TBString tempStr = combinedStrings[i];
+                combinedStrings[i] = combinedStrings[i + 1];
+                combinedStrings[i + 1] = tempStr;
                 notDone = true;
             }
         }
