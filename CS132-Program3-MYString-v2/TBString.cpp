@@ -67,7 +67,7 @@ char TBString::at(int index)
 	}
 }
 
-istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBString::read(istream& inputStrm)`
+istream& operator>>(istream& inputStrm, TBString& tbStr)		// replaces `bool TBString::read(istream& inputStrm)`
 {
 	char inputWord[100];
 	if (inputStrm >> inputWord)
@@ -84,6 +84,49 @@ istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBStr
 		tbStr.end = strlen(inputWord);
 	}
 	return inputStrm;
+}
+
+ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `void TBString::write(ostream& outputStrm)`
+{
+	outputStrm << tbStr.str;
+	return outputStrm;
+}
+
+bool TBString::operator<(const TBString& argStr) const			// replaces `bool TBString::lessThan(const TBString& argStr)`
+{
+	return compareTo(this->str, argStr.str) < 0;
+}
+
+bool TBString::operator>(const TBString& argStr) const			// replaces `bool TBString::greaterThan(const TBString& argStr)`
+{
+	return compareTo(this->str, argStr.str) > 0;
+}
+
+bool TBString::operator==(const TBString& argStr) const			// replaces `bool TBString::equals(const TBString& argStr)`
+{
+	return compareTo(this->str, argStr.str) > 0;
+}
+
+TBString& TBString::operator=(const TBString& argStr)			// replaces `void TBString::setEqualTo(const TBString& argStr)`
+{
+	if (this == &argStr)
+	{
+		return *this;
+	}
+
+	delete[] this->str;
+
+	this->str = new char[strlen(argStr.str) + 1];
+	strcpy_s(this->str,  strlen(argStr.str) + 1, argStr.str);
+
+	this->end = argStr.end;
+
+	return *this;
+}
+
+const char* TBString::c_str()
+{
+	return str;
 }
 
 /*
@@ -109,23 +152,12 @@ bool TBString::read(istream& inputStrm)
 }
 */
 
-ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `void TBString::write(ostream& outputStrm)`
-{
-	outputStrm << tbStr.str;
-	return outputStrm;
-}
-
 /*
 void TBString::write(ostream& outputStrm)
 {
 	outputStrm << str;
 }
 */
-
-bool TBString::operator<(const TBString& argStr) const	// replaces `bool TBString::lessThan(const TBString& argStr)`
-{
-	return compareTo(this->str, argStr.str) < 0;
-}
 
 /*
 bool TBString::lessThan(const TBString& argStr)
@@ -142,11 +174,6 @@ bool TBString::lessThan(const TBString& argStr)
 }
 */
 
-bool TBString::operator>(const TBString& argStr) const	// replaces `bool TBString::greaterThan(const TBString& argStr)`
-{
-	return compareTo(this->str, argStr.str) > 0;
-}
-
 /*
 bool TBString::greaterThan(const TBString& argStr)
 {
@@ -161,11 +188,6 @@ bool TBString::greaterThan(const TBString& argStr)
 	}
 }
 */
-
-bool TBString::operator==(const TBString& argStr) const	// replaces `bool TBString::equals(const TBString& argStr)`
-{
-	return compareTo(this->str, argStr.str) > 0;
-}
 
 /*
 bool TBString::equals(const TBString& argStr)
@@ -183,23 +205,6 @@ bool TBString::equals(const TBString& argStr)
 }
 */
 
-TBString& TBString::operator=(const TBString& argStr)	// replaces `void TBString::setEqualTo(const TBString& argStr)`
-{
-	if (this == &argStr)
-	{
-		return *this;
-	}
-
-	delete[] this->str;
-
-	this->str = new char[strlen(argStr.str) + 1];
-	strcpy_s(this->str,  strlen(argStr.str) + 1, argStr.str);
-
-	this->end = argStr.end;
-
-	return *this;
-}
-
 /*
 void TBString::setEqualTo(const TBString& argStr)
 {
@@ -213,8 +218,3 @@ void TBString::setEqualTo(const TBString& argStr)
 	}
 }
 */
-
-const char* TBString::c_str()
-{
-	return str;
-}
