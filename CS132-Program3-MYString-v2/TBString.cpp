@@ -9,12 +9,14 @@ TBString::TBString()
 	str[end] = '\0';
 }
 
-TBString::TBString(const TBString& other) 
+TBString::TBString(const TBString& other) // Copy Constructor
 {
 	cap = other.cap;
 	end = other.end;
 	str = new char[cap];
-	for (int i = 0; i <= end; ++i) {
+
+	for (int i = 0; i <= end; ++i) 
+	{
 		str[i] = other.str[i];
 	}
 }
@@ -33,7 +35,7 @@ TBString::TBString(const char* cstr)
 	}
 }
 
-TBString::~TBString() 
+TBString::~TBString() // Destructor 
 {
 	delete[] str;
 }
@@ -125,6 +127,12 @@ bool TBString::equals(const TBString& argStr)
 	}
 }
 
+TBString& TBString::operator=(const TBString& argStr)	// replaces `void TBString::setEqualTo(const TBString& argStr)`
+{
+
+}
+
+/*
 void TBString::setEqualTo(const TBString& argStr)
 {
 	end = argStr.end;
@@ -136,6 +144,7 @@ void TBString::setEqualTo(const TBString& argStr)
 		str[i] = argStr.str[i];
 	}
 }
+*/
 
 const char* TBString::c_str()
 {

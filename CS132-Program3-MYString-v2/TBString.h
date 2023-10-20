@@ -26,7 +26,7 @@ public:
     bool greaterThan(const TBString& argStr);
     bool equals(const TBString& argStr);
 
-    void setEqualTo(const TBString& argStr);
+    TBString& operator=(const TBString& argStr);  // replaces `void setEqualTo(const TBString& argStr);`
     const char* c_str();
 
 private:
