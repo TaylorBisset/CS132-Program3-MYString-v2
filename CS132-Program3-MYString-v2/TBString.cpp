@@ -23,6 +23,11 @@ TBString::TBString(const char* cstr)
 	}
 }
 
+TBString::~TBString() 
+{
+	delete[] str;
+}
+
 int TBString::length()
 {
 	return end;
