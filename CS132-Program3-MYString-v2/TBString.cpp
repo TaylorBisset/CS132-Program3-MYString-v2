@@ -83,6 +83,7 @@ istream& operator>>(istream& inputStrm, TBString& tbStr)	// replaces `bool TBStr
 		strcpy_s(tbStr.str, strlen(inputWord) + 1, inputWord);
 		tbStr.end = strlen(inputWord);
 	}
+	return inputStrm;
 }
 
 /*
