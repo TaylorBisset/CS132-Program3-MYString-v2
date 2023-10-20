@@ -20,12 +20,12 @@ int main()
 {
 
     vector<TBString> words(100);        // calls default constructor 100 times
-    ifstream fin("infile2.txt");
+    ifstream fin("infile3.txt");
 
     // READ
     if (fin.fail())
     {
-        cout << "Couldn't open infile2.txt" << endl;
+        cout << "Couldn't open infile3.txt" << endl;
         system("pause");
         exit(1);
     }

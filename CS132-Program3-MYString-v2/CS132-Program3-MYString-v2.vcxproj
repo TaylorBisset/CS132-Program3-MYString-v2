@@ -134,7 +134,7 @@
     <ClInclude Include="TBString.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="infile2.txt" />
+    <Text Include="infile3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
