@@ -9,16 +9,17 @@ TBString::TBString()
 	str[end] = '\0';
 }
 
-TBString::TBString(const TBString& other) // Copy Constructor
+TBString::TBString(const TBString& mstr) // Copy Constructor
 {
-	cap = other.cap;
-	end = other.end;
+	cap = mstr.cap;
+	end = mstr.end;
 	str = new char[cap];
 
-	for (int i = 0; i <= end; ++i) 
+	for (int i = 0; i < end; ++i) 
 	{
-		str[i] = other.str[i];
+		str[i] = mstr.str[i];
 	}
+	str[end] = '\0';
 }
 
 TBString::TBString(const char* cstr)
@@ -92,22 +93,28 @@ ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `voi
 	return outputStrm;
 }
 
-TBString operator+(const TBString& lvalue, const TBString& rvalue) 
+TBString operator+(const TBString& lvalue, const TBString& rvalue)
 {
 	int newLength = lvalue.end + rvalue.end;
 	char* result = new char[newLength + 1];
 
+	int resultIndex = 0;
 	for (int i = 0; i < lvalue.end; i++)
 	{
-		result[i] = lvalue.str[i];
+		result[resultIndex] = lvalue.str[i];
+		resultIndex++;
 	}
 	for (int i = 0; i < rvalue.end; i++)
 	{
-		result[lvalue.end + i] = rvalue.str[i];
+		result[resultIndex] = rvalue.str[i];
+		resultIndex++;
 	}
 	result[newLength] = '\0';
 
-	return TBString(result);
+	TBString concatenated(result);
+	delete[] result;
+
+	return concatenated;
 }
 
 bool TBString::operator<(const TBString& argStr) const			// replaces `bool TBString::lessThan(const TBString& argStr)`

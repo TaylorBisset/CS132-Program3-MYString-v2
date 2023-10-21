@@ -5,25 +5,18 @@
 //
 // Description:     Sort strings in alphabetical order. 
 ////
-
 // main.cpp
-
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <iomanip>
 #include "TBString.h"
-
 using namespace std;
-
 int main()
 {
-
     vector<TBString> words(100);        // calls default constructor 100 times
     ifstream fin("infile3.txt");
-
     // READ
-
     if (fin.fail())
     {
         cout << "Couldn't open infile3.txt" << endl;
@@ -35,47 +28,37 @@ int main()
     TBString jumboString;
 
     int wordCnt = 0;
-    for (TBString word; fin >> word; ++wordCnt)
-    {
-        jumboString = jumboString + word;
-
-        if (wordCnt % 5 == 0)
-        {
-            combinedStrings.push_back(jumboString);
-            jumboString = TBString();
-        }
+    for (; fin >> words[wordCnt]; ++wordCnt)
+    {       // empty loop
+            // cout << words[wordCnt].c_str() << '\t';      // for verifying input
     }
     words.resize(wordCnt);            //shrink vector to size used
-
     // You need to write the rest
-
     // SORT
-
     bool notDone = true;
     while (notDone == true)
     {
         notDone = false;
-        for (int i = 0; i < combinedStrings.size() - 1; i++)
+        for (int i = 0; i < wordCnt - 1; i++)
         {
-            if (combinedStrings[i] > combinedStrings[i + 1])
+            if (words[i] > (words[i + 1]))
             {
-                TBString tempStr = combinedStrings[i];
-                combinedStrings[i] = combinedStrings[i + 1];
-                combinedStrings[i + 1] = tempStr;
+                TBString tempStr = words[i];
+                words[i] = words[i + 1];
+                words[i + 1] = tempStr;
                 notDone = true;
             }
         }
     }
-
     // OUTPUT
-
-    for (int i = 0; i < combinedStrings.size(); i++)
+    for (int i = 0; i < wordCnt; i++)
     {
-        cout << left << setw(25) << combinedStrings[i].c_str();
-        cout << combinedStrings[i].length() << ":";
-        cout << combinedStrings[i].capacity() << endl;
+        cout << left << setw(13) << words[i].c_str();
+        if ((i + 1) % 6 == 0)
+        {
+            cout << endl;
+        }
     }
-
     ofstream fout("outfile.txt");
     if (fout.fail())
     {
@@ -83,7 +66,6 @@ int main()
         system("pause");
         exit(1);
     }
-
     for (int i = 0; i < wordCnt; i++)
     {
         fout << left << setw(13) << words[i].c_str();
@@ -92,10 +74,8 @@ int main()
             fout << endl;
         }
     }
-
     fin.close();
     fout.close();
-
     // OS independent program termination sequence. 
 #ifdef _WIN32
     cout << endl;
