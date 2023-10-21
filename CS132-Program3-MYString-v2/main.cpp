@@ -66,7 +66,13 @@ int main()
 
     // OUTPUT
 
-    for (int i = 0; i < wordCnt; i++)
+    for (int i = 0; i < wordCnt; i++)   // Put every word in its own line
+    {
+        cout << words[i].c_str() << endl;
+    }
+
+    /*
+    for (int i = 0; i < wordCnt; i++)   // Puts 5 words on every line
     {
         cout << left << setw(13) << words[i].c_str();
         if ((i + 1) % 6 == 0)
@@ -74,6 +80,7 @@ int main()
             cout << endl;
         }
     }
+    */
 
     ofstream fout("outfile.txt");
     if (fout.fail())
