@@ -23,6 +23,7 @@ int main()
     ifstream fin("infile3.txt");
 
     // READ
+
     if (fin.fail())
     {
         cout << "Couldn't open infile3.txt" << endl;
@@ -54,7 +55,7 @@ int main()
     while (notDone == true)
     {
         notDone = false;
-        for (int i = 0; i < combinedStrings.size() - 1; i++)
+        for (int i = 0; i < combinedStrings.size(); i++)
         {
             if (combinedStrings[i] > (combinedStrings[i + 1]))
             {
@@ -68,13 +69,11 @@ int main()
 
     // OUTPUT
 
-    for (int i = 0; i < wordCnt; i++)
+    for (int i = 0; i < combinedStrings.size(); i++)
     {
-        cout << left << setw(13) << words[i].c_str();
-        if ((i + 1) % 6 == 0)
-        {
-            cout << endl;
-        }
+        cout << left << setw(25) << combinedStrings[i].c_str();
+        cout << combinedStrings[i].length() << ":";
+        cout << combinedStrings[i].capacity() << endl;
     }
 
     ofstream fout("outfile.txt");
