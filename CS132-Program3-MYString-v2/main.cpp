@@ -55,9 +55,9 @@ int main()
     while (notDone == true)
     {
         notDone = false;
-        for (int i = 0; i < combinedStrings.size(); i++)
+        for (int i = 0; i < combinedStrings.size() - 1; i++)
         {
-            if (combinedStrings[i] > (combinedStrings[i + 1]))
+            if (combinedStrings[i] > combinedStrings[i + 1])
             {
                 TBString tempStr = combinedStrings[i];
                 combinedStrings[i] = combinedStrings[i + 1];
