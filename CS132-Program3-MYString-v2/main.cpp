@@ -38,8 +38,10 @@ int main()
     int wordCnt = 0;
     for (; fin >> words[wordCnt]; ++wordCnt)
     {       // empty loop
-            // cout << words[wordCnt].c_str() << '\t';      // for verifying input
+            cout << words[wordCnt].c_str() << '\t';      // for verifying input
     }
+    cout << endl << endl;
+
     words.resize(wordCnt);            //shrink vector to size used
 
     // You need to write the rest

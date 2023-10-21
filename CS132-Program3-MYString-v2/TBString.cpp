@@ -5,15 +5,15 @@ TBString::TBString()
 {
 	cap = 20;
 	end = 0;
-	str = new char[cap];
-	str[end] = '\0';
+	str = new char[cap + 1];
+	str[0] = '\0';
 }
 
 TBString::TBString(const TBString& mstr) // Copy Constructor
 {
 	cap = mstr.cap;
 	end = mstr.end;
-	str = new char[cap];
+	str = new char[cap + 1];
 
 	for (int i = 0; i < end; ++i) 
 	{
