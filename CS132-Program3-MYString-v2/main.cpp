@@ -1,22 +1,30 @@
-////
-// Name:            Taylor Bisset
-// Section:         A
-// Program Name:    TBString Tester 
-//
-// Description:     Sort strings in alphabetical order. 
-////
-// main.cpp
+/*
+ Name:            Taylor Bisset
+ Section:         A
+ Program Name:    TBString Tester 
+
+ Description:     Sort strings in alphabetical order. 
+*/
+
+/*
+main.cpp
+*/
+
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <iomanip>
 #include "TBString.h"
+
 using namespace std;
+
 int main()
 {
     vector<TBString> words(100);        // calls default constructor 100 times
     ifstream fin("infile3.txt");
+
     // READ
+
     if (fin.fail())
     {
         cout << "Couldn't open infile3.txt" << endl;
@@ -33,8 +41,11 @@ int main()
             // cout << words[wordCnt].c_str() << '\t';      // for verifying input
     }
     words.resize(wordCnt);            //shrink vector to size used
+
     // You need to write the rest
+    
     // SORT
+
     bool notDone = true;
     while (notDone == true)
     {
@@ -50,7 +61,9 @@ int main()
             }
         }
     }
+
     // OUTPUT
+
     for (int i = 0; i < wordCnt; i++)
     {
         cout << left << setw(13) << words[i].c_str();
@@ -59,6 +72,7 @@ int main()
             cout << endl;
         }
     }
+
     ofstream fout("outfile.txt");
     if (fout.fail())
     {
@@ -66,6 +80,7 @@ int main()
         system("pause");
         exit(1);
     }
+
     for (int i = 0; i < wordCnt; i++)
     {
         fout << left << setw(13) << words[i].c_str();
@@ -74,8 +89,10 @@ int main()
             fout << endl;
         }
     }
+
     fin.close();
     fout.close();
+
     // OS independent program termination sequence. 
 #ifdef _WIN32
     cout << endl;
