@@ -90,8 +90,8 @@ int main()
     cout << "\tcombinedStrings vector: \n\n";
     for (const TBString& concatenated : combinedStrings)
     {
-        cout << concatenated << "\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
-        fout << concatenated << "\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
+        cout << left << setw(35) << concatenated << "\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
+        fout << left << setw(35) << concatenated << "\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
     }
     cout << endl;
 
@@ -117,22 +117,22 @@ Output to console:
 
         combinedStrings vector:
 
-Ibegantocomparethe      18:100
-Ifeltwasimpossible.Or   21:100
-Theyseemedamazinglybusy.I       25:100
-andrulesinhisbody?      18:100
-anironcladorasteam      18:100
-asaman'sbrainsits       17:100
-askmyselfforthefirst    20:100
-begantoaskmyselfwhat    20:100
-didaMartiansitwithin    20:100
+Ibegantocomparethe                      18:100
+Ifeltwasimpossible.Or                   21:100
+Theyseemedamazinglybusy.I               25:100
+andrulesinhisbody?                      18:100
+anironcladorasteam                      18:100
+asaman'sbrainsits                       17:100
+askmyselfforthefirst                    20:100
+begantoaskmyselfwhat                    20:100
+didaMartiansitwithin                    20:100
 each,ruling,directing,using,much        32:100
-enginewouldseemtoan     19:100
+enginewouldseemtoan                     19:100
 intelligentloweranimal.ThisIsMyAmazinglyLongStringToMakeYourExtractionOperatorWorkCorrectly.    92:100
 intelligentmechanisms?Suchathing        32:100
-theycouldbe.Werethey    20:100
-thingstohumanmachines,to        24:100
-timeinmylifehow 15:100
+theycouldbe.Werethey                    20:100
+thingstohumanmachines,to                24:100
+timeinmylifehow                         15:100
 
 
 Press any key to continue . . .
