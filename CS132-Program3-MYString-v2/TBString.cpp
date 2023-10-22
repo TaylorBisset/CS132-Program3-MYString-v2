@@ -3,7 +3,7 @@
 
 TBString::TBString()
 {
-	cap = 200;
+	cap = 100;
 	end = 0;
 	str = new char[cap + 1];
 	str[0] = '\0';
@@ -27,7 +27,7 @@ TBString::TBString(const char* cstr)
 	for (end = 0; cstr[end] != '\0'; ++end);
 	//empty loop
 
-	cap = 200;						//TODO: needs to potentially grow for prog3
+	cap = 100;						//TODO: needs to potentially grow for prog3
 	str = new char[cap];
 
 	for (int i = 0; i <= end; ++i)
