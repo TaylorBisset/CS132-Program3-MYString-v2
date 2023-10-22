@@ -44,10 +44,15 @@ int main()
 
     words.resize(wordCnt);            //shrink vector to size used
 
-    for (const TBString& word : words) 
+    for (int i = 0; i < wordCnt; i++) 
     {
-        jumboString = jumboString + word;
-        cout << jumboString << endl;        // to verify jumboString
+        jumboString = jumboString + words[i];       // Concatenate the current word
+
+        if ((i + 1) % 5 == 0)                       // Check if we've combined 5 words
+        {
+            combinedStrings.push_back(jumboString); // Add the concatenated string to the vector
+            jumboString = TBString();               // Reset jumboString
+        }
     }
     
     // SORT
