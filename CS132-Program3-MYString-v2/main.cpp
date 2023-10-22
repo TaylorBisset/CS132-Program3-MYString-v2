@@ -44,7 +44,9 @@ int main()
 
     words.resize(wordCnt);            //shrink vector to size used
 
-    // You need to write the rest
+    for (const TBString& word : words) {
+        jumboString = jumboString + word;
+    }
     
     // SORT
 

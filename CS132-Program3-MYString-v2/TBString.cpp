@@ -95,20 +95,35 @@ ostream& operator<<(ostream& outputStrm, const TBString& tbStr)	// replaces `voi
 
 TBString operator+(const TBString& lvalue, const TBString& rvalue)
 {
-	int newLength = lvalue.end + rvalue.end;
+	int lvalueLength = 0;
+	while (lvalue.str[lvalueLength] != '\0') 
+	{
+		lvalueLength++;
+	}
+
+	int rvalueLength = 0;
+	while (rvalue.str[rvalueLength] != '\0') 
+	{
+		rvalueLength++;
+	}
+
+	int newLength = lvalueLength + rvalueLength;
 	char* result = new char[newLength + 1];
 
 	int resultIndex = 0;
-	for (int i = 0; i < lvalue.end; i++)
+
+	for (int i = 0; i < lvalueLength; i++)
 	{
 		result[resultIndex] = lvalue.str[i];
 		resultIndex++;
 	}
-	for (int i = 0; i < rvalue.end; i++)
+
+	for (int i = 0; i < rvalueLength; i++)
 	{
 		result[resultIndex] = rvalue.str[i];
 		resultIndex++;
 	}
+
 	result[newLength] = '\0';
 
 	TBString concatenated(result);
