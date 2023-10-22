@@ -41,12 +41,12 @@ TBString::~TBString() // Destructor
 	delete[] str;
 }
 
-int TBString::length()
+int TBString::length() const
 {
 	return end;
 }
 
-int TBString::capacity()
+int TBString::capacity() const
 {
 	return cap;
 }

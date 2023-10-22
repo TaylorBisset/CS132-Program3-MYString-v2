@@ -15,8 +15,8 @@ public:
     TBString(const char* cstr);     // cstring constructor
     ~TBString();                    // destructor
 
-    int length();
-    int capacity();
+    int length() const;
+    int capacity() const;
 
     char& operator[](int index);
     char at(int index);

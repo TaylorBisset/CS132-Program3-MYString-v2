@@ -90,8 +90,8 @@ int main()
     cout << "\tcombinedStrings vector: \n\n";
     for (const TBString& concatenated : combinedStrings)
     {
-        cout << concatenated << endl;
-        fout << concatenated << endl;
+        cout << concatenated << "\t\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
+        fout << concatenated << "\t\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
     }
     cout << endl;
 
