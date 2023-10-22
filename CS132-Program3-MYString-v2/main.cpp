@@ -93,7 +93,7 @@ int main()
         cout << concatenated << endl;
         fout << concatenated << endl;
     }
-    cout << endl << endl;
+    cout << endl;
 
     fin.close();
     fout.close();
@@ -115,20 +115,25 @@ int main()
 
 Output to console:
 
-I            I            I            Martian      Or           Such
-They         ThisIsMyAmazinglyLongStringToMakeYourExtractionOperatorWorkCorrectly.Were         a            a            a
-a            amazingly    an           an           and          animal.
-as           ask          ask          be.          began        began
-body?        brain        busy.        compare      could        did
-directing,   each,        engine       felt         first        for
-his          how          human        impossible.  in           in
-intelligent  intelligent  ironclad     life         lower        machines,
-man's        mechanisms?  much         my           myself       myself
-or           rules        ruling,      seem         seemed       sit
-sits         steam        the          the          they         they
-thing        things       time         to           to           to
-to           to           using,       was          what         within
-would
+        combinedStrings vector:
+
+Ibegantocomparethe
+Ifeltwasimpossible.Or
+Theyseemedamazinglybusy.I
+andrulesinhisbody?
+anironcladorasteam
+asaman'sbrainsits
+askmyselfforthefirst
+begantoaskmyselfwhat
+didaMartiansitwithin
+each,ruling,directing,using,much
+enginewouldseemtoan
+intelligentloweranimal.ThisIsMyAmazinglyLongStringToMakeYourExtractionOperatorWorkCorrectly.
+intelligentmechanisms?Suchathing
+theycouldbe.Werethey
+thingstohumanmachines,to
+timeinmylifehow
+
 
 Press any key to continue . . .
 
