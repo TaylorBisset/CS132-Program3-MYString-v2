@@ -54,6 +54,11 @@ int main()
             jumboString = TBString();               // Reset jumboString
         }
     }
+
+    for (const TBString& concatenated : combinedStrings)
+    {
+        cout << concatenated << endl;
+    }
     
     // SORT
 
