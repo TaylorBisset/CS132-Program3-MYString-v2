@@ -79,24 +79,6 @@ int main()
 
     // OUTPUT
 
-    cout << "\tcombinedStrings vector: \n\n";
-    for (const TBString& concatenated : combinedStrings)
-    {
-        cout << concatenated << endl;
-    }
-    cout << endl << endl;
-
-    /*
-    for (int i = 0; i < wordCnt; i++)           // Puts 5 words on every line
-    {
-        cout << left << setw(13) << words[i].c_str();
-        if ((i + 1) % 6 == 0)
-        {
-            cout << endl;
-        }
-    }
-    */
-
     ofstream fout("outfile.txt");
     if (fout.fail())
     {
@@ -105,21 +87,13 @@ int main()
         exit(1);
     }
 
-    for (const TBString& concatenated : combinedStrings)    // output to outfile.txt
+    cout << "\tcombinedStrings vector: \n\n";
+    for (const TBString& concatenated : combinedStrings)
     {
+        cout << concatenated << endl;
         fout << concatenated << endl;
     }
-
-    /*
-    for (int i = 0; i < wordCnt; i++)           // Puts 5 words on every line
-    {
-        fout << left << setw(13) << words[i].c_str();
-        if ((i + 1) % 6 == 0)
-        {
-            fout << endl;
-        }
-    }
-    */
+    cout << endl << endl;
 
     fin.close();
     fout.close();
