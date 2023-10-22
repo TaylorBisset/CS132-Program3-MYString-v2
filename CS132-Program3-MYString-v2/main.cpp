@@ -47,6 +47,7 @@ int main()
     for (const TBString& word : words) 
     {
         jumboString = jumboString + word;
+        cout << jumboString << endl;        // to verify jumboString
     }
     
     // SORT
