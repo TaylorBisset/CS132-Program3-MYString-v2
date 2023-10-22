@@ -105,7 +105,7 @@ int main()
         exit(1);
     }
 
-    for (const TBString& concatenated : combinedStrings)
+    for (const TBString& concatenated : combinedStrings)    // output to outfile.txt
     {
         fout << concatenated << endl;
     }
