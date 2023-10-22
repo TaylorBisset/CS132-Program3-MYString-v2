@@ -36,6 +36,7 @@ int main()
     TBString jumboString;
 
     int wordCnt = 0;
+    cout << "\tInput file check: \n\n";
     for (; fin >> words[wordCnt]; ++wordCnt)
     {       // empty loop
             cout << words[wordCnt].c_str() << '\t';      // for verifying input
@@ -57,10 +58,13 @@ int main()
     if (jumboString.length() > 0) {
         combinedStrings.push_back(jumboString);     // Add the remaining concatenated string to the vector
     }
+
+    cout << "\tcombinedStrings vector: \n\n";
     for (const TBString& concatenated : combinedStrings)
     {
         cout << concatenated << endl;
     }
+    cout << endl << endl;
     
     // SORT
 
