@@ -54,7 +54,9 @@ int main()
             jumboString = TBString();               // Reset jumboString
         }
     }
-
+    if (jumboString.length() > 0) {
+        combinedStrings.push_back(jumboString);     // Add the remaining concatenated string to the vector
+    }
     for (const TBString& concatenated : combinedStrings)
     {
         cout << concatenated << endl;
