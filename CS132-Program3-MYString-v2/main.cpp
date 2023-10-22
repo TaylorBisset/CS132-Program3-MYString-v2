@@ -90,8 +90,8 @@ int main()
     cout << "\tcombinedStrings vector: \n\n";
     for (const TBString& concatenated : combinedStrings)
     {
-        cout << concatenated << "\t\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
-        fout << concatenated << "\t\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
+        cout << concatenated << "\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
+        fout << concatenated << "\t" << concatenated.length() << ":" << concatenated.capacity() << endl;
     }
     cout << endl;
 
@@ -117,22 +117,22 @@ Output to console:
 
         combinedStrings vector:
 
-Ibegantocomparethe
-Ifeltwasimpossible.Or
-Theyseemedamazinglybusy.I
-andrulesinhisbody?
-anironcladorasteam
-asaman'sbrainsits
-askmyselfforthefirst
-begantoaskmyselfwhat
-didaMartiansitwithin
-each,ruling,directing,using,much
-enginewouldseemtoan
-intelligentloweranimal.ThisIsMyAmazinglyLongStringToMakeYourExtractionOperatorWorkCorrectly.
-intelligentmechanisms?Suchathing
-theycouldbe.Werethey
-thingstohumanmachines,to
-timeinmylifehow
+Ibegantocomparethe      18:200
+Ifeltwasimpossible.Or   21:200
+Theyseemedamazinglybusy.I       25:200
+andrulesinhisbody?      18:200
+anironcladorasteam      18:200
+asaman'sbrainsits       17:200
+askmyselfforthefirst    20:200
+begantoaskmyselfwhat    20:200
+didaMartiansitwithin    20:200
+each,ruling,directing,using,much        32:200
+enginewouldseemtoan     19:200
+intelligentloweranimal.ThisIsMyAmazinglyLongStringToMakeYourExtractionOperatorWorkCorrectly.    92:200
+intelligentmechanisms?Suchathing        32:200
+theycouldbe.Werethey    20:200
+thingstohumanmachines,to        24:200
+timeinmylifehow 15:200
 
 
 Press any key to continue . . .
