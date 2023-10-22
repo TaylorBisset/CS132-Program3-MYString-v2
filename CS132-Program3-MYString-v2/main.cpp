@@ -58,13 +58,6 @@ int main()
     if (jumboString.length() > 0) {
         combinedStrings.push_back(jumboString);     // Add the remaining concatenated string to the vector
     }
-
-    cout << "\tcombinedStrings vector: \n\n";
-    for (const TBString& concatenated : combinedStrings)
-    {
-        cout << concatenated << endl;
-    }
-    cout << endl << endl;
     
     // SORT
 
@@ -86,10 +79,12 @@ int main()
 
     // OUTPUT
 
-    for (int i = 0; i < wordCnt; i++)           // Put every word in its own line
+    cout << "\tcombinedStrings vector: \n\n";
+    for (const TBString& concatenated : combinedStrings)
     {
-        cout << words[i].c_str() << endl;
+        cout << concatenated << endl;
     }
+    cout << endl << endl;
 
     /*
     for (int i = 0; i < wordCnt; i++)           // Puts 5 words on every line
@@ -110,9 +105,9 @@ int main()
         exit(1);
     }
 
-    for (int i = 0; i < wordCnt; i++)           // Put every word in its own line
+    for (const TBString& concatenated : combinedStrings)
     {
-        cout << words[i].c_str() << endl;
+        fout << concatenated << endl;
     }
 
     /*
