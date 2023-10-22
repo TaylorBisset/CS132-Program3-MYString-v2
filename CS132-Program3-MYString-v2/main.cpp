@@ -44,7 +44,8 @@ int main()
 
     words.resize(wordCnt);            //shrink vector to size used
 
-    for (const TBString& word : words) {
+    for (const TBString& word : words) 
+    {
         jumboString = jumboString + word;
     }
     
