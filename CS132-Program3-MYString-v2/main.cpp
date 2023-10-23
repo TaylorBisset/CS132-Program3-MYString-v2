@@ -1,9 +1,15 @@
 /*
- Name:            Taylor Bisset
- Section:         A
- Program Name:    TBString Tester 
+ Name:          Taylor Bisset
+ Section:       A
+ Program Name:  CS132-Program3-MYString-v2
 
- Description:     Sort strings in alphabetical order. 
+ Description:   This program reads strings from an input file, 
+                combines every five consecutive words into a single string, 
+                stores them in a vector, 
+                and then sorts the combined strings in alphabetical order. 
+                The sorted results are written to an output file.
+
+Repo:           https://github.com/TaylorBisset/CS132-Program3-MYString-v2
 */
 
 /*
